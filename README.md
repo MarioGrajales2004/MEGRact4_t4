@@ -69,6 +69,8 @@ Abrir la carpeta [`bruno/`](bruno) en Bruno (**Open Collection**) y elegir el en
 
 ## Capturas de pantalla
 
+Pruebas ejecutadas en Bruno contra la API desplegada en el VPS (entorno **VPS**, `http://216.238.94.85:8087`).
+
 ### Registro de usuario
 ![Registro](docs/img/01_registro.png)
 
