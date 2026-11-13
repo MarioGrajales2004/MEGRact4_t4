@@ -1,0 +1,30 @@
+meta {
+  name: 02 Login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/auth/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "{{email}}",
+    "password": "{{password}}"
+  }
+}
+
+vars:post-response {
+  token: res.body.token
+}
+
+tests {
+  test("200 OK con token JWT", function() {
+    expect(res.status).to.equal(200);
+    expect(res.body.token).to.be.a("string");
+    expect(res.body.tipo).to.equal("Bearer");
+  });
+}

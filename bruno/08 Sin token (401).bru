@@ -1,0 +1,17 @@
+meta {
+  name: 08 Sin token (401)
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/api/libros
+  body: none
+  auth: none
+}
+
+tests {
+  test("401 Unauthorized sin token", function() {
+    expect(res.status).to.equal(401);
+  });
+}

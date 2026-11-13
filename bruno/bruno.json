@@ -1,0 +1,6 @@
+{
+  "version": "1",
+  "name": "MEGRact4_t4",
+  "type": "collection",
+  "ignore": ["node_modules", ".git"]
+}

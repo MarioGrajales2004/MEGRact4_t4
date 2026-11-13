@@ -1,0 +1,36 @@
+meta {
+  name: 05 Crear
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/libros
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "titulo": "El llano en llamas",
+    "autor": "Juan Rulfo",
+    "anio": 1953,
+    "precio": 179.0,
+    "editorialId": 2
+  }
+}
+
+vars:post-response {
+  libroId: res.body.id
+}
+
+tests {
+  test("201 Created", function() {
+    expect(res.status).to.equal(201);
+    expect(res.body.editorialNombre).to.be.a("string");
+  });
+}
